@@ -14,11 +14,20 @@
     <title>Amado - Furniture Ecommerce Template | Home</title>
 
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-      .noto_font{
-          font-family: 'Noto Sans KR', sans-serif;
+      @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+      .nunum{
+        font-family: 'NanumSquare', sans-serif;
+        font-size:17px;
+        line-height:1.5;
+        font-weight: 400;
       }
-  </style>
+      .nunum_bold{
+        font-family: 'NanumSquare', sans-serif;
+        font-size:17px;
+        line-height:1.5;
+        font-weight: 600;
+      }
+    </style>
 
     <!-- Favicon  -->
     <link rel="icon" href="img/core-img/favicon.ico" />
@@ -36,7 +45,7 @@
       <div class="mobile-nav">
         <!-- Navbar Brand -->
         <div style="display: block; max-width: 300px; align-items: center;">
-          <a href="index.html" class="noto_font" style="font-size:15px;"
+          <a href="index.html" class="nunum_bold" style="font-size:15px;"
             ><img
               src="image/icon1.png"
               width="40px"
@@ -70,7 +79,7 @@
         >
           <a href="login.html" class="cart-nav" style="vertical-align: center">
             <i
-              class="fas fa-user-circle noto_font"
+              class="fas fa-user-circle nunum_bold"
               style="font-size: 30px; color: #33958f"
             ></i>
             Log In</a
@@ -78,7 +87,7 @@
         </div>
         <!-- menu -->
         <nav class="amado-nav">
-          <ul class = "noto_font">
+          <ul class = "nunum">
             <li class="active"><a href="index.html">홈</a></li>
             <li><a href="shop.html">사전 설문조사</a></li>
             <li><a href="product-details.html">추천된 앱 확인</a></li>
@@ -92,6 +101,7 @@
       <!-- Product Catagories Area Start -->
       <div class="products-catagories-area clearfix">
         <div class="amado-pro-catagory clearfix">
+
           <!-- Single Catagory -->
           <div class="single-products-catagory clearfix">
             <a href="shop.html">
@@ -106,17 +116,25 @@
           </div>
 
           <!-- Single Catagory -->
-          <div class="single-products-catagory clearfix">
-            <a href="shop.html">
-              <img src="img/bg-img/9.jpg" alt="" />
-              <!-- Hover Content -->
-              <div class="hover-content">
-                <div class="line"></div>
-                <p>From $318</p>
-                <h4>Home Deco</h4>
+          <div class="single-products-catagory clearfix" style="margin: 20px;">
+            <div class="mb-10">
+              <span></span>
+              <div style="float: left; color: black;">
+                <span style="font-size: 15px;">사전 설문조사</span>
               </div>
-            </a>
+              <span></span>
+              <i class="fas fa-chevron-right" style="width:34px; height:30px; float: left; margin-right: 10px; color: #33958f;"></i>
+              <div style="float: left; color: black;">
+                <span style="font-size: 15px;">추천 앱 확인</span>
+              </div>
+              <i class="fas fa-chevron-right" style="width:34px; height:30px; float: left; margin-right: 10px; color: #33958f;"></i>
+              <div style="float: left; color: black;">
+                <span style="font-size: 15px;">사후 설문조사</span>
+              </div>
+            </div>
           </div>
+          
+
         </div>
       </div>
       <!-- Product Catagories Area End -->
@@ -128,7 +146,7 @@
         <div class="align-items-center">
           <!-- Single Widget Area -->
           <div class="col-12 col-lg-4">
-            <div class="single_widget_area noto_font">
+            <div class="single_widget_area nunum">
               <!-- Logo -->
               <div class="row footer-logo mr-10" style="margin-top : 10px; margin-bottom: 20px; margin-left: auto;">
                 <img src="image/phone.png" style="width:34px; height:30px; float: left; margin-right: 10px;" alt=""/>
