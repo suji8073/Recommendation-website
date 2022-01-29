@@ -28,6 +28,59 @@
   padding: 0;
 }
 
+#wrapper1 {
+  /*width should be the total of all the small boxes widths and margins */
+  width: 75px;
+  float: left;
+  text-align: center;
+}
+#wrapper2 {
+  /*width should be the total of all the small boxes widths and margins */
+  width: 75px;
+  float: left;
+  text-align: center;
+}
+#wrapper3 {
+  /*width should be the total of all the small boxes widths and margins */
+  width: 75px;
+  float: left;
+  text-align: center;
+}
+
+#next {
+  /*width should be the total of all the small boxes widths and margins */
+  width: 45px;
+  float: left;
+  text-align: center;
+  margin: 0 4px 0 4px;
+}
+
+.icon {
+  /*all of my divs look like this*/
+  margin: 0 0 8px 0;
+  width: 75px;
+  height: 50px;
+  float: left;
+  text-align: center;
+}
+
+.text {
+  /*all of my divs look like this*/
+  width: 75px;
+  height: 60px;
+  float: left;
+  text-align: center;
+}
+
+.margin {
+  /*all of my divs look like this*/
+  width: 45px;
+  height: 34px;
+  float: left;
+  text-align: center;
+}
+
+
 body {
   font-family: "helveticaneuemedium";
   font-size: 16px;
@@ -571,10 +624,10 @@ img {
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 320px;
-    flex: 0 0 320px;
-    width: 320px;
-    max-width: 320px;
+    -ms-flex: 0 0 300px;
+    flex: 0 0 300px;
+    width: 270px;
+    max-width: 300px;
     position: fixed;
     z-index: 4000;
     top: 0;
