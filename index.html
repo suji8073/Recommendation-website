@@ -45,13 +45,18 @@
       <div class="mobile-nav">
         <!-- Navbar Brand -->
 
-        <div class= "text-center" style="display: block; max-width: 300px; align-items: center;">
-          <a href="login.html" class="nunum_bold text-center" style="font-size:24px; color: #33958f">
-            <i
+        <div class= "text-center" style="display: block; max-width: 300px; align-items: center; justify-content: center; ">
+          <a onclick="login_check()">
+            <div style="display: flex; height: 40px; float: left; margin-right: 10px;">
+              <i
               class="fas fa-user-circle nunum_bold"
-              style="font-size: 30px; color: #33958f; height: 35px; width: 35px;"
-            ></i>
-            Log in</a>
+              style=" font-size: 30px; color: #33958f; height: 40px; width: 40px; "></i>
+            </div>
+            <div style="display: flex; height: 40px; float: left; text-align: center; align-items: center;  ">
+              <span  id = "login_y_n_main" class="nunum_bold" style=" font-size:24px; color: #33958f">
+                Log in</span>
+            </div>
+          </a>
         </div>
 
         <!-- Navbar Toggler -->
@@ -77,7 +82,7 @@
           class="cart-fav-search"
           style="font-size: 20px; line-height: 200px"
         >
-          <a href="login.html" class="cart-nav" style="vertical-align: center">
+          <a href="login.html" class="cart-nav" style="vertical-align: center; ">
             <i
               class="fas fa-user-circle nunum_bold"
               style="font-size: 30px; color: #33958f"
@@ -196,5 +201,8 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type= "text/javascript" src="index.js"></script>
   </body>
 </html>
