@@ -82,12 +82,12 @@
         class="cart-fav-search"
         style="font-size: 20px; line-height: 200px"
       >
-        <a href="login.html" class="cart-nav" style="vertical-align: center">
+        <a onclick="login_check()" class="cart-nav" style="vertical-align: center">
           <i
             class="fas fa-user-circle nunum_bold"
             style="font-size: 30px; color: #33958f"
           ></i>
-          Log In</a
+          <span id = "login_" style=" color: #5e5e5e">Log In</span></a
         >
       </div>
           <!-- menu -->
@@ -124,10 +124,12 @@
               <h3>추천된 앱 확인</h3>
               </br>
               <div class="amado-btn-group mt-10 mb-30 text-center">
-                <a href="https://apps.apple.com/kr/app/%EB%93%80%EC%98%A4%EB%A7%81%EA%B3%A0-duolingo/id570060128" class="btn version-btn" style="text-align: center">추천된 앱 1 ios 버전</a>
-                <a href="#" class="btn version-btn" style="text-align: center">추천된 앱 1 android 버전</a>
-                <a href="#" class="btn version-btn" style="text-align: center">추천된 앱 2 ios 버전</a>
-                <a href="#" class="btn version-btn" style="text-align: center">추천된 앱 2 android 버전</a>
+                <a onclick="rc_app1()" class="btn version-btn" style="text-align: center; color : white">추천된 앱 1 ios 버전</a>
+                <a onclick="rc_app1_()" class="btn version-btn" style="text-align: center; color : white">추천된 앱 1 android 버전</a>
+                <a onclick="rc_app2()" class="btn version-btn" style="text-align: center; color : white">추천된 앱 2 ios 버전</a>
+                <a onclick="rc_app2_()" class="btn version-btn" style="text-align: center; color : white">추천된 앱 2 android 버전</a>
+                <a onclick="rc_app3()" class="btn version-btn" style="text-align: center; color : white">추천된 앱 3 ios 버전</a>
+                <a onclick="rc_app3_()" class="btn version-btn" style="text-align: center; color : white">추천된 앱 3 android 버전</a>
               </div>
               <div class="text-center">
                 <button type="button" onclick="location.href='3.html'" class="btn btn-primary mt-3 px-5" style="height: 50px;">사후 설문조사 바로가기</button>
@@ -179,6 +181,9 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type= "text/javascript" src="2.js"></script>
 
 </body>
 

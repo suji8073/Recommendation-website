@@ -81,12 +81,12 @@
         class="cart-fav-search"
         style="font-size: 20px; line-height: 200px"
       >
-        <a href="login.html" class="cart-nav" style="vertical-align: center">
+        <a onclick="login_check()" class="cart-nav" style="vertical-align: center">
           <i
             class="fas fa-user-circle nunum_bold"
             style="font-size: 30px; color: #33958f"
           ></i>
-          Log In</a
+          <span id = "login_" style=" color: #5e5e5e">Log In</span></a
         >
       </div>
       <!-- menu -->
@@ -172,6 +172,9 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type= "text/javascript" src="3.js"></script>
 
 </body>
 

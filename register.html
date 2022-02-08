@@ -61,18 +61,6 @@
           
           <form class="validation-form" style="margin-top: 30px;" novalidate>
             <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="name">이름</label>
-                <input
-                  type="text"
-                  class="form-control noto"
-                  id="name"
-                  placeholder="이름을 입력해주세요."
-                  value=""
-                  required
-                />
-                <div class="invalid-feedback">이름을 입력해주세요.</div>
-              </div>
             </div>
             <div class="mb-3">
               <label for="email">이메일</label>
@@ -86,24 +74,24 @@
               <div class="invalid-feedback">이메일을 입력해주세요.</div>
             </div>
             <div class="mb-3">
-              <label for="address">비밀번호</label>
+              <label for="password">비밀번호</label>
               <input
                 type="password"
                 class="form-control noto"
-                id="address"
+                id="password"
                 placeholder="8자 이상 영문, 숫자를 혼합하여 입력해주세요."
                 required
               />
               <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
             </div>
             <div class="mb-3">
-              <label for="address2"
+              <label for="password1"
                 >비밀번호 확인</label
               >
               <input
                 type="password"
+                id = "password1"
                 class="form-control noto"
-                id="address2"
                 placeholder="비밀번호를 한번 더 입력하세요."
                 required
               />
@@ -111,46 +99,19 @@
             </div>
            
             <hr class="mb-4" />
-            <div class="custom-control custom-checkbox">
-              <input
-                type="checkbox"
-                class="custom-control-input"
-                id="aggrement"
-                required
-              />
-              <label class="custom-control-label" for="aggrement"
-                >개인정보 수집 및 이용에 동의합니다.</label
-              >
-            </div>
+
             <div class="mb-4"></div>
-            <button class="btn btn-primary btn-lg btn-block" type="submit">
+            <button onclick = "register()" class="btn btn-primary btn-lg btn-block" type="button">
               가입 완료
             </button>
           </form>
         </div>
       </div>
     </div>
-    <script>
-      window.addEventListener(
-        "load",
-        () => {
-          const forms = document.getElementsByClassName("validation-form");
-          Array.prototype.filter.call(forms, (form) => {
-            form.addEventListener(
-              "submit",
-              function (event) {
-                if (form.checkValidity() === false) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                }
-                form.classList.add("was-validated");
-              },
-              false
-            );
-          });
-        },
-        false
-      );
-    </script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type= "text/javascript" src="register.js"></script>
+
+
   </body>
 </html>
