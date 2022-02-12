@@ -80,6 +80,135 @@
   text-align: center;
 }
 
+.common {
+  width: 35%;
+  height: 120px;
+  float: left;
+  text-align: center;
+}
+
+.content_app {
+  background-color: rgb(255, 255, 255);
+}
+
+.common_app {
+  width: 100%;
+  height: 90px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  float: left;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  font-size: 19px;
+  line-height: 45px;
+  align-items: center;
+  text-align: center;
+  background-color: #33958f;
+  font-weight: 400;
+}
+
+.common_app.active,
+.common_app:hover,
+.common_app:focus {
+  font-size: 19px;
+  color: #ffffff;
+  background-color: #131212;
+}
+
+.margin1 {
+  width: 5%;
+  height: 60px;
+  float: left;
+  text-align: center;
+}
+
+.common1 {
+  width: 50%;
+  height: 120px;
+  float: left;
+  text-align: center;
+}
+
+.app {
+  float: left;
+  width: 100%;
+  height: 55px;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 0 7px;
+  font-size: 16px;
+  line-height: 56px;
+  align-items: center;
+  text-align: center;
+  background-color: #f3d03d;
+  font-weight: 400;
+}
+
+.app.active,
+.app:hover,
+.app:focus {
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #f7af21;
+}
+
+.content_1 {
+  width: 60%;
+  height: 50px;
+  float: left;
+  text-align: center;
+}
+
+.evaluation {
+  width: 100%;
+  height: 100%;
+  float: left;
+  color: #ffffff;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: #ebebeb;
+  font-size: 18px;
+  line-height: 50px;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  font-weight: 400;
+}
+
+.evaluation.active,
+.evaluation:hover,
+.evaluation:focus {
+  font-size: 19px;
+  color: #ffffff;
+  background-color: #ebebeb;
+}
+
+.content_2 {
+  width: 15%;
+  height: 50px;
+  float: left;
+  text-align: center;
+  line-height: 56px;
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: #ebebeb;
+}
+
+.margin_content {
+  width: 10%;
+  height: 50px;
+  float: left;
+  text-align: center;
+}
+
+.margin_content1 {
+  width: 5%;
+  height: 50px;
+  float: left;
+  text-align: center;
+}
 
 body {
   font-family: "helveticaneuemedium";
@@ -229,7 +358,12 @@ img {
 
 /* Section Padding */
 .section-padding-100 {
-  padding-bottom: 100px;
+  padding-bottom: 90px;
+}
+
+/* Section Padding */
+.section-padding-100- {
+  padding-bottom: 5px;
 }
 
 .section-padding-100-0 {

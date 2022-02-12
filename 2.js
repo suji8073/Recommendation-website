@@ -122,85 +122,157 @@ function login_check() {
 }
 
 function rc_app1() {
-  try {
-    var rec1 = sessionStorage.getItem("rec1");
-    location.href = recommendation_list[rec1 - 1][0];
-  } catch (error) {
-    console.error(error);
+  var user_email = sessionStorage.getItem("user_email");
+
+  if (user_email !== null) {
+    try {
+      var rec1 = sessionStorage.getItem("rec1");
+      location.href = recommendation_list[rec1 - 1][0];
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        icon: "error",
+        text: "추천된 앱이 없습니다.",
+        timer: 1500,
+      });
+    }
+  } else {
     Swal.fire({
       icon: "error",
-      text: "추천된 앱이 없습니다.",
+      text: "로그인을 해주세요.",
       timer: 1500,
     });
   }
 }
 
 function rc_app2() {
-  try {
-    var rec2 = sessionStorage.getItem("rec2");
-    location.href = recommendation_list[rec2 - 1][0];
-  } catch (error) {
-    console.error(error);
+  var user_email = sessionStorage.getItem("user_email");
+
+  if (user_email !== null) {
+    try {
+      var rec2 = sessionStorage.getItem("rec2");
+      location.href = recommendation_list[rec2 - 1][0];
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        icon: "error",
+        text: "추천된 앱이 없습니다.",
+        timer: 1500,
+      });
+    }
+  } else {
     Swal.fire({
       icon: "error",
-      text: "추천된 앱이 없습니다.",
+      text: "로그인을 해주세요.",
       timer: 1500,
     });
   }
 }
 
 function rc_app3() {
-  try {
-    var rec3 = sessionStorage.getItem("rec3");
-    location.href = recommendation_list[rec3 - 1][0];
-  } catch (error) {
-    console.error(error);
+  var user_email = sessionStorage.getItem("user_email");
+
+  if (user_email !== null) {
+    try {
+      var rec3 = sessionStorage.getItem("rec3");
+      location.href = recommendation_list[rec3 - 1][0];
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        icon: "error",
+        text: "추천된 앱이 없습니다.",
+        timer: 1500,
+      });
+    }
+  } else {
     Swal.fire({
       icon: "error",
-      text: "추천된 앱이 없습니다.",
+      text: "로그인을 해주세요.",
       timer: 1500,
     });
   }
 }
 
 function rc_app1_() {
-  try {
-    var rec1 = sessionStorage.getItem("rec1");
-    location.href = recommendation_list[rec1 - 1][1];
-  } catch (error) {
-    console.error(error);
+  var user_email = sessionStorage.getItem("user_email");
+
+  if (user_email !== null) {
+    try {
+      var rec1 = sessionStorage.getItem("rec1");
+      location.href = recommendation_list[rec1 - 1][1];
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        icon: "error",
+        text: "추천된 앱이 없습니다.",
+        timer: 1500,
+      });
+    }
+  } else {
     Swal.fire({
       icon: "error",
-      text: "추천된 앱이 없습니다.",
+      text: "로그인을 해주세요.",
       timer: 1500,
     });
   }
 }
 
 function rc_app2_() {
-  try {
-    var rec2 = sessionStorage.getItem("rec2");
-    location.href = recommendation_list[rec2 - 1][1];
-  } catch (error) {
-    console.error(error);
+  var user_email = sessionStorage.getItem("user_email");
+
+  if (user_email !== null) {
+    try {
+      var rec2 = sessionStorage.getItem("rec2");
+      location.href = recommendation_list[rec2 - 1][1];
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        icon: "error",
+        text: "추천된 앱이 없습니다.",
+        timer: 1500,
+      });
+    }
+  } else {
     Swal.fire({
       icon: "error",
-      text: "추천된 앱이 없습니다.",
+      text: "로그인을 해주세요.",
       timer: 1500,
     });
   }
 }
 
 function rc_app3_() {
-  try {
-    var rec3 = sessionStorage.getItem("rec3");
-    location.href = recommendation_list[rec3 - 1][1];
-  } catch (error) {
-    console.error(error);
+  var user_email = sessionStorage.getItem("user_email");
+
+  if (user_email !== null) {
+    try {
+      var rec3 = sessionStorage.getItem("rec3");
+      location.href = recommendation_list[rec3 - 1][1];
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        icon: "error",
+        text: "추천된 앱이 없습니다.",
+        timer: 1500,
+      });
+    }
+  } else {
     Swal.fire({
       icon: "error",
-      text: "추천된 앱이 없습니다.",
+      text: "로그인을 해주세요.",
       timer: 1500,
     });
   }
+}
+
+function app_click_1() {
+  Swal.fire({ text: "팝업창" });
+}
+
+function app_click_2() {
+  Swal.fire({ text: "팝업창" });
+}
+
+function app_click_3() {
+  Swal.fire({ text: "팝업창" });
 }

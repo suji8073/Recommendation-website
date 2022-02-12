@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>어학 애플리케이션 추천시스템 | 사후 설문조사</title>
+    <title>어학 애플리케이션 추천시스템 | 앱 평가하기</title>
 
     <style>
         @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
@@ -33,6 +33,7 @@
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="css/core-style.css">
     <link rel="stylesheet" href="style.css">
+    <!--<link href="css/argon-dashboard.css?v=1.1.2" rel="stylesheet" /> -->
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 
 </head>
@@ -89,18 +90,18 @@
           <span id = "login_" style=" color: #5e5e5e">Log In</span></a
         >
       </div>
-      <!-- menu -->
-      <nav class="amado-nav">
-        <ul class = "nunum">
-          <li ><a href="index.html">홈</a></li>
-          <li ><a href="1.html">나의 성향은?</a></li>
-          <li><a href="2.html">추천된 앱 확인</a></li>
-          <li class="active"><a href="3.html">나의 만족도는?</a></li>
-          <li><a href="5.html">앱 평가하기</a></li>
-          <li ><a href="4.html">문의</a></li>
-        </ul>
-      </nav>
-    </header>
+          <!-- menu -->
+          <nav class="amado-nav">
+            <ul class = "nunum">
+              <li ><a href="index.html">홈</a></li>
+              <li ><a href="1.html">나의 성향은?</a></li>
+              <li><a href="2.html">추천된 앱 확인</a></li>
+              <li><a href="3.html">나의 만족도는?</a></li>
+              <li class="active"><a href="5.html">앱 평가하기</a></li>
+              <li ><a href="4.html">문의</a></li>
+            </ul>
+          </nav>
+        </header>
         <!-- Header Area End -->
 
     <!-- Product Catagories Area Start -->
@@ -118,17 +119,65 @@
     </div>
 
     <div class="cart-table-area section-padding-100">
-      <div class="container-fluid">
+      <div class="container-fluid" >
         <div class="checkout_details_area mt-40 clearfix">
             <div class="cart-title nunum">
-                <h3>나의 만족도는?</h3>
+              <h3>추천받은 앱은 어떠셨나요?</h3>
             </br>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9z0UrwvKVUKnRFRytM3iBRWOXDNIFEC3KEj0z6KncJUnHOg/closedform" class="btn amado-btn" style="text-align: center">나의 만족도
-            </a>
-                </br></br>
-                <h6>여러분들이 사용하셨던 앱과 추천에 대한 만족도를 조사하기 위한 것입니다.   
-                </br>추천시스템이 더욱 발전될 수 있도록 성실히 답변하여 주시길 바랍니다. </h6>
+            <div class = "content_app">
+              <div class="row" style="margin-bottom: 0px;">
+                <div class="margin_content"></div>
+                <div class="content_1" style="float: left;">
+                  <a onclick="evaluation_1()" class="evaluation" style="text-align: center; color : rgb(0, 0, 0)">앱1 평가하기</a>
+                </div>
+
+                <div class="margin_content1"></div>
+                <div  class="content_2" style="float: left;">
+                  <i id = "icon_1" class="fas fa-solid fa-check" style="font-size: 30px; color: #FBD74A"></i>
+                </div>
+                <div class="margin_content"></div>
+              </div>
+
+              <div class="row" style="margin-top: 30px;">
+                <div class="margin_content"></div>
+                <div class="content_1" style="float: left;">
+                  <a onclick="evaluation_2()" class="evaluation" style="text-align: center; color : rgb(0, 0, 0)">앱2 평가하기</a>
+                </div>
+
+                <div class="margin_content1"></div>
+                <div  class="content_2" style="float: left;">
+                  <i id = "icon_2" class="fas fa-solid fa-check" style="font-size: 30px; color: #BBBBBB"></i>
+                </div>
+                <div class="margin_content"></div>
+              </div>
+
+              <div class="row" style="margin-top: 30px;">
+                <div class="margin_content"></div>
+                <div class="content_1" style="float: left;">
+                  <a onclick="evaluation_3()" class="evaluation" style="text-align: center; color : rgb(0, 0, 0)">앱3 평가하기</a>
+                </div>
+
+                <div class="margin_content1"></div>
+                <div  class="content_2" style="float: left;">
+                  <i id = "icon_3" class="fas fa-solid fa-check" style="font-size: 30px; color: #BBBBBB"></i>
+                </div>
+                <div class="margin_content"></div>
+              </div>
+
+              <div class="row" style="margin-top: 40px;">
+                <div class="margin_content"></div>
+                <div class="content_1" style="float: left;">
+                  <a onclick="evaluation_4()" class="evaluation" style="text-align: center;">추천시스템 평가하기</a>
+                </div>
+
+                <div class="margin_content1"></div>
+                <div  class="content_2" style="float: left;">
+                  <i id = "icon_4" class="fas fa-solid fa-check" style="font-size: 30px; color: #BBBBBB"></i>
+                </div>
+                <div class="margin_content"></div>
+              </div>
             </div>
+          </div>  
         </div>
       </div>
     </div>
@@ -149,6 +198,7 @@
                 <span style="font-size: 15px;">이메일</br>hyejijang@ewhain.net</span>
               </div>
             </div>
+
           </div>  
         </div>
       </div>
@@ -168,7 +218,7 @@
     <script src="js/active.js"></script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type= "text/javascript" src="3.js"></script>
+    <script type= "text/javascript" src="5.js"></script>
 
 </body>
 
