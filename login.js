@@ -40,6 +40,7 @@ function login_check() {
       })
       .then((data) => {
         //{password: 'test1234', rec2: '5', rec1: '3', email: 'test22@kw.ac.kr'}
+        console.log(data);
         var i;
         for (i = 0; i < data.records.length; i++) {
           if (
@@ -53,9 +54,17 @@ function login_check() {
             sessionStorage.setItem("rec1", data.records[i].fields.rec1);
             sessionStorage.setItem("rec2", data.records[i].fields.rec2);
             sessionStorage.setItem("rec3", data.records[i].fields.rec3);
+            sessionStorage.setItem("type", data.records[i].fields.type);
+            sessionStorage.setItem("survey1", data.records[i].fields.survey1);
+            sessionStorage.setItem("survey2", data.records[i].fields.survey2);
+            sessionStorage.setItem("survey3", data.records[i].fields.survey3);
+            sessionStorage.setItem(
+              "survey_rec",
+              data.records[i].fields.survey_rec
+            );
 
-            var user_email = sessionStorage.getItem("user_email");
-            var user_pw = sessionStorage.getItem("user_pw");
+            var user_email = sessionStorage.getItem("survey3");
+            var user_pw = sessionStorage.getItem("survey_rec");
 
             console.log(user_email);
             console.log(user_pw);

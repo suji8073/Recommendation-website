@@ -82,13 +82,134 @@ var recommendation_list = [
   ],
 ];
 
+var recommendation_list_common = [
+  [
+    "AI 산타토익",
+    "[로그인 필요]</br>1. 로그인후 AI tutor에게 이름을 말해봅니다.</br>2. AI tutor에게 코스를 추천해달라고 요청해봅니다.</br>3. AI tutor가 추천한 코스중 하나를 선택하고, 5단계 학습을 해봅니다.",
+  ],
+  [
+    "Super Chinese",
+    "[로그인 필요없음]</br>1. 홈화면에서 레벨테스트를 클릭하여 5분간 학습합니다.</br>2. Level 1에서 학습하고 싶은 메뉴를 고르고 학습을 합니다(기초 중국어/자기소개 중 선택) 3. 성조를 녹음해 봅니다.",
+  ],
+  [
+    "플랭",
+    "[로그인 필요] </br>1. 오늘의 트레이닝을 클릭합니다.</br>2. 짧은 유튜브 영상을 보고 영작하기를 해봅니다.</br>3. 영작후, 리스닝-스피킹-감상하기를 순서대로 학습해봅니다.",
+  ],
+  [
+    "오픽업",
+    "[로그인 필요] </br>1. 홈화면에서 '오늘의 문장' 3문장의 발음 연습을 합니다.(발음연습 버튼을 눌러 한번 듣고- 도전 버튼을 누른 상태에서 녹음을 합니다)</br>2. 설문토픽에서 관심있는 주제 두개를 고르고 학습해봅니다. ",
+  ],
+  [
+    "LingoChamp",
+    "[로그인 필요]</br>1. 동기, 성별, 관심사 등 기본 사항을 선택합니다.</br>2. '3일 무료체험' 화면에서 좌측 상단 닫기(x) 클릭합니다.</br>3. '나의 영어레벨'을선택하여 간단한 테스트 진행후 레벨을 확인합니다.</br>4. 레벨 확인후 좌측 상단 닫기(x)를 클릭하면, '오늘의 학습 내용' 이 보이는 화면에서 아래로 내려가 ' AI 코치 '를 선택하여 학습합니다.",
+  ],
+  [
+    "이지보카",
+    "[로그인 필요없음]</br>1. 단어장 선택을 누릅니다 -> 공부 목적에 맞게 단어장을 선택합니다.</br>2. 'Start'를 눌러 기본학습을 시작합니다. (화면을 터치하면 속도를 조절할 수 있습니다)</br>3. 남은 시간동안 '무료 단어장'을 사용하여 학습해봅니다. ",
+  ],
+  [
+    "말해보카",
+    "[로그인 필요없음]</br>1. 오늘의 학습을 클릭합니다 -> 본인의 학습 목적을 선택합니다.</br>2. 20개의 단어 학습을 하고, 나의 영어 어휘력 수준을 파악해봅니다. ",
+  ],
+  [
+    "문정아중국어",
+    "[로그인 필요]</br>1. 로그인후 가이드봇이 학습 사용법을 알려줍니다 ('다음' 클릭).</br>2. 1단계 학습: 에피소드(동영상 1분)를 시청하고 단어 따라해 봅니다.</br>3. 2단계 말하기: 중국어 설명과 성조(동영상 1분)에 대한 학습 후 성조를 녹음하며 연습해봅니다.",
+  ],
+  [
+    "듀오링고",
+    "[로그인은 선택사항]</br>0. 학습하고 싶은 언어를 하나 고릅니다.</br>1. 간단한 레벨 테스트 단계와 프로필 생성단계를 거칩니다.</br>2. 무료로 할 수 있는 단계 중 하나를 정해 학습합니다.</br>3. 남은 시간동안 학습하고 싶은 부분을 학습해봅니다.",
+  ],
+  [
+    "케이크 영어회화",
+    "[로그인 필요없음]</br>0. 학습하고 싶은 언어를 하나 고릅니다.</br>1. 화면 중앙에 보이는 영상 중 학습하고 싶은 영상 하나를 고릅니다.</br>2. 영상 아래에 위치한 박스의 우측 상단에 보이는 'Drill'을 사용해 자막없이 동영상을 한번 시청합니다.</br>3. 배속버튼을 0.75로 하고, 이번엔 자막을 보며 학습합니다.</br>4. 동영상을 2번 시청한 후, '말하기 A레벨에 도전!' 메뉴에서 표현을 따라해봅니다.</br>5. 남은 시간 동안 어플을 탐색하여봅니다. ",
+  ],
+  [
+    "YouBot 영어",
+    "[로그인 필요]</br>1. 동영상을 시청합니다.</br>2. INPUT에서 표현학습을 10분정도 해봅니다.</br>3. OUTPUT에서 5분정도 학습합니다.",
+  ],
+  [
+    "ELSA Speak",
+    "[로그인 없이 가능 - 로그인 없이 체험은 로그인 화면에서 '건너뛰기' 누르기]</br>0. 모국어를 한국어로 설정한다음 간단한 설문에 응답합니다.</br>1. [제한적인 요금제로 계속이용]을 클릭하여 학습을 시작합니다.</br>2. [미니테스트 시작]을 누릅니다.</br>3. [발음법 입문]을 클릭하여 학습 해 봅니다.</br>4. 남은 시간 동안 어플을 탐색하여봅니다. ",
+  ],
+  [
+    "해커스토익빅플",
+    "[로그인 필요]</br>1. 첫 화면에서 해커스 진단테스트를 클릭합니다. (로그인 상태에서만 가능)</br>2. 앞에 5문제 풀어봅니다.</br>3. 답안 제출 후, 취약 유형 확인하고, 시간이 남으면 하나의 취약 유형에 관해서 학습해봅니다.",
+  ],
+  [
+    "멤라이즈(Memrise)",
+    "[로그인 필요]</br>1. 배우고 싶은 언어를 선택합니다.</br>2. 구매를 유도하는 창이 뜨면 [Maybe later]를 선택 합니다.</br>3. 첫화면 우측 하단에 [Learn]을 클릭합니다.</br>4. [1 - 단어 및 구분] 또는 [2 - 문법 학습] 무료단계 중 수강하고 싶은 강좌를 골라 수강합니다.",
+  ],
+  [
+    "Mondly",
+    "[로그인 필요없음]</br>1. 배우고 싶은 언어와 레벨을 선택하고 '자습서 시작'을 클릭합니다.</br>2. 관심 있는 주제를 선택합니다. </br>3. 7일 무료 체험을 건너 뛰고 학습을 시작합니다.</br>4. 안녕하세요에 '대화'단계를 선택하고, 학습해봅니다.</br>5. 대화단계를 학습하고 메인 메뉴로 나와 '채팅봇 단계'를 눌러서 학습해 봅니다.</br>6. 추가로 5분동안 자신이 원하는 메뉴로 들어가 학습을 진행합니다.",
+  ],
+  [
+    "AI Tutor",
+    "[로그인 필요]</br>1. 로그인 후 'AI튜터's Pick, 결정적 그 표현'에서 자신이 학습하고 싶은 주제를 클릭합니다.</br>2. 선택한 주제로 5단계 학습을 해봅니다.</br>3. 추가로 자신이 원하는 주제를 선택해 학습을 진행합니다.",
+  ],
+  [
+    "뉴로제타스톤",
+    "[로그인 필요]</br>1. 학습하고 싶은 언어를 선택합니다.</br>2. 학습 목표를 선택합니다.</br>3. 학습 1.1을 진행합니다.</br>4. 추가로 자신이 원하는 메뉴에 들어가서 학습을 진행합니다.",
+  ],
+  [
+    "Busuu",
+    "[로그인 필요]</br>1. 언어 학습 여부, 학습 이유를 클릭합니다.</br>2. 원하는 학습 시간에 '15분'을 입력한 후 계속을 클릭합니다.</br>3. 오른쪽 상단에 있는 '건너뛰기'를 클릭합니다 ('7일 무료 체험 시작' 버튼은 광고입니다).</br>4. '학습을 시작하세요'를 클릭합니다.</br>5. 하루에 얻어야 하는 포인트가 채워질 때까지 학습을 진행합니다.",
+  ],
+];
+
 window.onload = function start() {
+  var user_email = sessionStorage.getItem("user_email");
+  var user_email = sessionStorage.getItem("user_email");
+  var user_email = sessionStorage.getItem("user_email");
   var user_email = sessionStorage.getItem("user_email");
 
   if (user_email !== null) {
     document.getElementById("login_y_n_main").innerHTML = user_email;
     document.getElementById("login_y_n_main").style.fontSize = "18px";
     document.getElementById("login_").innerHTML = user_email.split("@")[0];
+
+    var rec1 = sessionStorage.getItem("rec1");
+    var rec2 = sessionStorage.getItem("rec2");
+    var rec3 = sessionStorage.getItem("rec3");
+    console.log(rec1);
+    document.getElementById("app_1").innerHTML =
+      recommendation_list_common[rec1 - 1][0] + "<br/>" + "사용 예시";
+    document.getElementById("app_2").innerHTML =
+      recommendation_list_common[rec2 - 1][0] + "<br/>" + "사용 예시";
+    document.getElementById("app_3").innerHTML =
+      recommendation_list_common[rec3 - 1][0] + "<br/>" + "사용 예시";
+
+    document.getElementById("app_1_1").innerHTML =
+      "추천된 앱" +
+      "<br/>" +
+      recommendation_list_common[rec1 - 1][0] +
+      " ios 버전";
+    document.getElementById("app_2_1").innerHTML =
+      "추천된 앱" +
+      "<br/>" +
+      recommendation_list_common[rec2 - 1][0] +
+      " ios 버전";
+    document.getElementById("app_3_1").innerHTML =
+      "추천된 앱" +
+      "<br/>" +
+      recommendation_list_common[rec3 - 1][0] +
+      " ios 버전";
+
+    document.getElementById("app_1_2").innerHTML =
+      "추천된 앱" +
+      "<br/>" +
+      recommendation_list_common[rec1 - 1][0] +
+      " android 버전";
+    document.getElementById("app_2_2").innerHTML =
+      "추천된 앱" +
+      "<br/>" +
+      recommendation_list_common[rec2 - 1][0] +
+      " android 버전";
+    document.getElementById("app_3_2").innerHTML =
+      "추천된 앱" +
+      "<br/>" +
+      recommendation_list_common[rec3 - 1][0] +
+      " android 버전";
   }
 };
 
@@ -266,13 +387,28 @@ function rc_app3_() {
 }
 
 function app_click_1() {
-  Swal.fire({ text: "팝업창" });
+  var user_email = sessionStorage.getItem("user_email");
+
+  if (user_email !== null) {
+    var rec1 = sessionStorage.getItem("rec1");
+    Swal.fire({ html: recommendation_list_common[rec1 - 1][1] });
+  }
 }
 
 function app_click_2() {
-  Swal.fire({ text: "팝업창" });
+  var user_email = sessionStorage.getItem("user_email");
+
+  if (user_email !== null) {
+    var rec2 = sessionStorage.getItem("rec2");
+    Swal.fire({ html: recommendation_list_common[rec2 - 1][1] });
+  }
 }
 
 function app_click_3() {
-  Swal.fire({ text: "팝업창" });
+  var user_email = sessionStorage.getItem("user_email");
+
+  if (user_email !== null) {
+    var rec3 = sessionStorage.getItem("rec3");
+    Swal.fire({ html: recommendation_list_common[rec3 - 1][1] });
+  }
 }
