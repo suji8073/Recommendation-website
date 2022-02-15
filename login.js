@@ -26,7 +26,7 @@ function login_check() {
     document.getElementById("PW").focus();
   } else {
     fetch(
-      "https://api.airtable.com/v0/appyJbFaZcmTQCGLQ/Table%201?maxRecords=3&view=Grid%20view",
+      "https://api.airtable.com/v0/appyJbFaZcmTQCGLQ/Table%201?maxRecords=100&view=Grid%20view",
       {
         headers: {
           Authorization: "Bearer keyTvIqUQEHqc8ufv",
@@ -65,12 +65,6 @@ function login_check() {
               "survey_rec",
               data.records[i].fields.survey_rec
             );
-
-            var user_email = sessionStorage.getItem("survey3");
-            var user_pw = sessionStorage.getItem("survey_rec");
-
-            console.log(user_email);
-            console.log(user_pw);
 
             Swal.fire({
               icon: "success",
