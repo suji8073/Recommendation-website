@@ -243,7 +243,6 @@ function rc_app1() {
       var rec1 = sessionStorage.getItem("rec1");
       location.href = recommendation_list[rec1 - 1][0];
     } catch (error) {
-      console.error(error);
       Swal.fire({
         icon: "error",
         text: "추천된 앱이 없습니다.",
@@ -265,7 +264,6 @@ function rc_app2() {
       var rec2 = sessionStorage.getItem("rec2");
       location.href = recommendation_list[rec2 - 1][0];
     } catch (error) {
-      console.error(error);
       Swal.fire({
         icon: "error",
         text: "추천된 앱이 없습니다.",
@@ -287,7 +285,6 @@ function rc_app3() {
       var rec3 = sessionStorage.getItem("rec3");
       location.href = recommendation_list[rec3 - 1][0];
     } catch (error) {
-      console.error(error);
       Swal.fire({
         icon: "error",
         text: "추천된 앱이 없습니다.",

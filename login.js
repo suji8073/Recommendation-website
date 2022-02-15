@@ -42,7 +42,6 @@ function login_check() {
       })
       .then((data) => {
         //{password: 'test1234', rec2: '5', rec1: '3', email: 'test22@kw.ac.kr'}
-        console.log(data);
         var i;
         for (i = 0; i < data.records.length; i++) {
           if (
