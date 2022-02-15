@@ -29,6 +29,7 @@ function login_check() {
           document.getElementById("login_y_n_main").style.fontSize = "24px";
           document.getElementById("login_").innerHTML = "Log in";
           sessionStorage.clear();
+          location.href = "login.html";
         });
       }
     });

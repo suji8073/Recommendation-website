@@ -52,6 +52,7 @@ function login_check() {
             //로그인 성공
             console.log("로그인 성공");
             check = 0;
+            sessionStorage.setItem("user_id", data.records[i].id);
             sessionStorage.setItem("user_email", data.records[i].fields.email);
             sessionStorage.setItem("user_pw", data.records[i].fields.password);
             sessionStorage.setItem("rec1", data.records[i].fields.rec1);

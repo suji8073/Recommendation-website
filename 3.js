@@ -79,17 +79,25 @@ var type_list = [
   "https://forms.gle/DCFT3juVS358U7CV8",
 ];
 
+var user_id = sessionStorage.getItem("user_id");
+var user_email = sessionStorage.getItem("user_email");
+var user_pw = sessionStorage.getItem("user_pw");
+
+var rec1 = sessionStorage.getItem("rec1");
+var rec2 = sessionStorage.getItem("rec2");
+var rec3 = sessionStorage.getItem("rec3");
+var type = sessionStorage.getItem("type");
+var survey1 = sessionStorage.getItem("survey1");
+var survey2 = sessionStorage.getItem("survey2");
+var survey3 = sessionStorage.getItem("survey3");
+var survey_rec = sessionStorage.getItem("survey_rec");
+
+let axiosConfig = {
+  Authorization: "Bearer keyTvIqUQEHqc8ufv",
+  "Content-Type": "application/json",
+};
+
 window.onload = function start() {
-  var user_email = sessionStorage.getItem("user_email");
-
-  var rec1 = sessionStorage.getItem("rec1");
-  var rec2 = sessionStorage.getItem("rec2");
-  var rec3 = sessionStorage.getItem("rec3");
-  var survey1 = sessionStorage.getItem("survey1");
-  var survey2 = sessionStorage.getItem("survey2");
-  var survey3 = sessionStorage.getItem("survey3");
-  var survey_rec = sessionStorage.getItem("survey_rec");
-
   if (user_email !== null) {
     document.getElementById("login_y_n_main").innerHTML = user_email;
     document.getElementById("login_y_n_main").style.fontSize = "18px";
@@ -101,23 +109,26 @@ window.onload = function start() {
     document.getElementById("evaluation_3").innerHTML =
       recommendation_list_common[rec3 - 1][0] + " 평가하기";
 
-    if (survey1 === 1) {
+    if (survey1 == 1) {
+      console.log("1");
       document.getElementById("icon_1").style.color = "#FBD74A";
     }
-    if (survey2 === 1) {
+    if (survey2 == 1) {
+      console.log("2");
       document.getElementById("icon_2").style.color = "#FBD74A";
     }
-    if (survey3 === 1) {
+    if (survey3 == 1) {
+      console.log("3");
       document.getElementById("icon_3").style.color = "#FBD74A";
     }
-    if (survey_rec === 1) {
+    if (survey_rec == 1) {
+      console.log("4");
       document.getElementById("icon_4").style.color = "#FBD74A";
     }
   }
 };
 
 function login_check() {
-  var user_email = sessionStorage.getItem("user_email");
   if (user_email !== null) {
     Swal.fire({
       text: "로그아웃 하시겠습니까?",
@@ -137,6 +148,7 @@ function login_check() {
           document.getElementById("login_y_n_main").style.fontSize = "24px";
           document.getElementById("login_").innerHTML = "Log in";
           sessionStorage.clear();
+          location.href = "login.html";
         });
       }
     });
@@ -146,9 +158,10 @@ function login_check() {
 }
 
 function evaluation_1() {
-  var user_email = sessionStorage.getItem("user_email");
   if (user_email !== null) {
-    location.href = "https://forms.gle/d5zPoB2fxiAf7wnd9";
+    change_sur1();
+    window.open("about:blank").location.href =
+      "https://forms.gle/d5zPoB2fxiAf7wnd9";
   } else {
     Swal.fire({
       icon: "error",
@@ -158,9 +171,10 @@ function evaluation_1() {
   }
 }
 function evaluation_2() {
-  var user_email = sessionStorage.getItem("user_email");
   if (user_email !== null) {
-    location.href = "https://forms.gle/d5zPoB2fxiAf7wnd9";
+    change_sur2();
+    window.open("about:blank").location.href =
+      "https://forms.gle/d5zPoB2fxiAf7wnd9";
   } else {
     Swal.fire({
       icon: "error",
@@ -171,9 +185,10 @@ function evaluation_2() {
 }
 
 function evaluation_3() {
-  var user_email = sessionStorage.getItem("user_email");
   if (user_email !== null) {
-    location.href = "https://forms.gle/d5zPoB2fxiAf7wnd9";
+    change_sur3();
+    window.open("about:blank").location.href =
+      "https://forms.gle/d5zPoB2fxiAf7wnd9";
   } else {
     Swal.fire({
       icon: "error",
@@ -184,10 +199,18 @@ function evaluation_3() {
 }
 
 function evaluation_4() {
-  var user_email = sessionStorage.getItem("user_email");
   if (user_email !== null) {
     var type = sessionStorage.getItem("type");
-    location.href = type_list[type - 1];
+    if (type > 0) {
+      change_sur4();
+      window.open("about:blank").location.href = type_list[type - 1];
+    } else {
+      Swal.fire({
+        icon: "error",
+        text: "type이 결정되지 않았습니다.",
+        timer: 1500,
+      });
+    }
   } else {
     Swal.fire({
       icon: "error",
@@ -195,4 +218,120 @@ function evaluation_4() {
       timer: 1500,
     });
   }
+}
+
+function change_sur1() {
+  survey1 = sessionStorage.setItem("survey1", "1");
+  const data = {
+    records: [
+      {
+        id: user_id,
+        fields: {
+          email: user_email,
+          password: user_pw,
+          rec1: rec1,
+          rec2: rec2,
+          rec3: rec3,
+          type: type,
+          survey1: "1",
+          survey2: survey2,
+          survey3: survey3,
+          survey_rec: survey_rec,
+        },
+      },
+    ],
+  };
+
+  fetch("https://api.airtable.com/v0/appyJbFaZcmTQCGLQ/Table%201", {
+    method: "PATCH",
+    body: JSON.stringify(data),
+    headers: axiosConfig,
+  });
+}
+
+function change_sur2() {
+  survey2 = sessionStorage.setItem("survey2", "1");
+  const data = {
+    records: [
+      {
+        id: user_id,
+        fields: {
+          email: user_email,
+          password: user_pw,
+          rec1: rec1,
+          rec2: rec2,
+          rec3: rec3,
+          type: type,
+          survey1: survey1,
+          survey2: "1",
+          survey3: survey3,
+          survey_rec: survey_rec,
+        },
+      },
+    ],
+  };
+
+  fetch("https://api.airtable.com/v0/appyJbFaZcmTQCGLQ/Table%201", {
+    method: "PATCH",
+    body: JSON.stringify(data),
+    headers: axiosConfig,
+  });
+}
+
+function change_sur3() {
+  survey3 = sessionStorage.setItem("survey3", "1");
+  const data = {
+    records: [
+      {
+        id: user_id,
+        fields: {
+          email: user_email,
+          password: user_pw,
+          rec1: rec1,
+          rec2: rec2,
+          rec3: rec3,
+          type: type,
+          survey1: survey1,
+          survey2: survey2,
+          survey3: "1",
+          survey_rec: survey_rec,
+        },
+      },
+    ],
+  };
+
+  fetch("https://api.airtable.com/v0/appyJbFaZcmTQCGLQ/Table%201", {
+    method: "PATCH",
+    body: JSON.stringify(data),
+    headers: axiosConfig,
+  });
+}
+
+function change_sur4() {
+  survey_rec = sessionStorage.setItem("survey_rec", "1");
+  const data = {
+    records: [
+      {
+        id: user_id,
+        fields: {
+          email: user_email,
+          password: user_pw,
+          rec1: rec1,
+          rec2: rec2,
+          rec3: rec3,
+          type: type,
+          survey1: survey1,
+          survey2: survey2,
+          survey3: survey3,
+          survey_rec: "1",
+        },
+      },
+    ],
+  };
+
+  fetch("https://api.airtable.com/v0/appyJbFaZcmTQCGLQ/Table%201", {
+    method: "PATCH",
+    body: JSON.stringify(data),
+    headers: axiosConfig,
+  });
 }

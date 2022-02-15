@@ -22,7 +22,7 @@ function register() {
       if (String(password).length < 8) {
         Swal.fire({
           icon: "error",
-          text: "아이디는 8자 이상이여야 합니다.",
+          text: "비밀번호는 8자 이상이여야 합니다.",
           timer: 1000,
         });
       } else {
@@ -42,6 +42,26 @@ function register() {
           ],
         };
 
+        const data1 = {
+          records: [
+            {
+              id: "recNe4RsgOw5HNHDs",
+              fields: {
+                email: email,
+                password: password,
+                type: null,
+                rec1: null,
+                rec2: null,
+                rec3: null,
+                survey1: 0,
+                survey2: 0,
+                survey3: 0,
+                survey_rec: 0,
+              },
+            },
+          ],
+        };
+
         let axiosConfig = {
           Authorization: "Bearer keyTvIqUQEHqc8ufv",
           "Content-Type": "application/json",
@@ -53,12 +73,18 @@ function register() {
           headers: axiosConfig,
         });
 
+        fetch("https://api.airtable.com/v0/appyJbFaZcmTQCGLQ/Table%201", {
+          body: JSON.stringify(data1),
+          headers: axiosConfig,
+          method: "PATCH",
+        });
+
         Swal.fire({
           text: "회원가입이 완료되었습니다..",
           icon: "success",
           timer: 1500,
         }).then(function () {
-          location.href = "./login.html";
+          //location.href = "./login.html";
         });
       }
     }

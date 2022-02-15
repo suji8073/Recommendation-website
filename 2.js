@@ -89,7 +89,7 @@ var recommendation_list_common = [
   ],
   [
     "Super Chinese",
-    "[로그인 필요없음]</br>1. 홈화면에서 레벨테스트를 클릭하여 5분간 학습합니다.</br>2. Level 1에서 학습하고 싶은 메뉴를 고르고 학습을 합니다(기초 중국어/자기소개 중 선택) 3. 성조를 녹음해 봅니다.",
+    "[로그인 필요없음]</br>1. 홈화면에서 레벨테스트를 클릭하여 5분간 학습합니다.</br>2. Level 1에서 학습하고 싶은 메뉴를 고르고 학습을 합니다(기초 중국어/자기소개 중 선택)</br>3. 성조를 녹음해 봅니다.",
   ],
   [
     "플랭",
@@ -97,11 +97,11 @@ var recommendation_list_common = [
   ],
   [
     "오픽업",
-    "[로그인 필요] </br>1. 홈화면에서 '오늘의 문장' 3문장의 발음 연습을 합니다.(발음연습 버튼을 눌러 한번 듣고- 도전 버튼을 누른 상태에서 녹음을 합니다)</br>2. 설문토픽에서 관심있는 주제 두개를 고르고 학습해봅니다. ",
+    "[로그인 필요] </br>1. 홈화면에서 '오늘의 문장' 3문장의 발음 연습을 합니다.(발음연습 버튼을 눌러 한번 듣고- 도전 버튼을 누른 상태에서 녹음을 합니다)</br>2. 설문토픽에서 관심있는 주제 두개를 고르고 학습해봅니다.",
   ],
   [
     "LingoChamp",
-    "[로그인 필요]</br>1. 동기, 성별, 관심사 등 기본 사항을 선택합니다.</br>2. '3일 무료체험' 화면에서 좌측 상단 닫기(x) 클릭합니다.</br>3. '나의 영어레벨'을선택하여 간단한 테스트 진행후 레벨을 확인합니다.</br>4. 레벨 확인후 좌측 상단 닫기(x)를 클릭하면, '오늘의 학습 내용' 이 보이는 화면에서 아래로 내려가 ' AI 코치 '를 선택하여 학습합니다.",
+    "[로그인 필요]</br>1. 동기, 성별, 관심사 등 기본 사항을 선택합니다.</br>2. '3일 무료체험' 화면에서 좌측 상단 닫기(x) 클릭합니다.</br>3.'나의 영어레벨'을선택하여 간단한 테스트 진행후 레벨을 확인합니다.</br>4. 레벨 확인후 좌측 상단 닫기(x)를 클릭하면, '오늘의 학습 내용' 이 보이는 화면에서 아래로 내려가 ' AI 코치 '를 선택하여 학습합니다.",
   ],
   [
     "이지보카",
@@ -156,22 +156,17 @@ var recommendation_list_common = [
     "[로그인 필요]</br>1. 언어 학습 여부, 학습 이유를 클릭합니다.</br>2. 원하는 학습 시간에 '15분'을 입력한 후 계속을 클릭합니다.</br>3. 오른쪽 상단에 있는 '건너뛰기'를 클릭합니다 ('7일 무료 체험 시작' 버튼은 광고입니다).</br>4. '학습을 시작하세요'를 클릭합니다.</br>5. 하루에 얻어야 하는 포인트가 채워질 때까지 학습을 진행합니다.",
   ],
 ];
+var user_email = sessionStorage.getItem("user_email");
+var rec1 = sessionStorage.getItem("rec1");
+var rec2 = sessionStorage.getItem("rec2");
+var rec3 = sessionStorage.getItem("rec3");
 
 window.onload = function start() {
-  var user_email = sessionStorage.getItem("user_email");
-  var user_email = sessionStorage.getItem("user_email");
-  var user_email = sessionStorage.getItem("user_email");
-  var user_email = sessionStorage.getItem("user_email");
-
   if (user_email !== null) {
     document.getElementById("login_y_n_main").innerHTML = user_email;
     document.getElementById("login_y_n_main").style.fontSize = "18px";
     document.getElementById("login_").innerHTML = user_email.split("@")[0];
 
-    var rec1 = sessionStorage.getItem("rec1");
-    var rec2 = sessionStorage.getItem("rec2");
-    var rec3 = sessionStorage.getItem("rec3");
-    console.log(rec1);
     document.getElementById("app_1").innerHTML =
       recommendation_list_common[rec1 - 1][0] + "<br/>" + "사용 예시";
     document.getElementById("app_2").innerHTML =
@@ -214,7 +209,6 @@ window.onload = function start() {
 };
 
 function login_check() {
-  var user_email = sessionStorage.getItem("user_email");
   if (user_email !== null) {
     Swal.fire({
       text: "로그아웃 하시겠습니까?",
@@ -234,6 +228,7 @@ function login_check() {
           document.getElementById("login_y_n_main").style.fontSize = "24px";
           document.getElementById("login_").innerHTML = "Log in";
           sessionStorage.clear();
+          location.href = "login.html";
         });
       }
     });
@@ -243,8 +238,6 @@ function login_check() {
 }
 
 function rc_app1() {
-  var user_email = sessionStorage.getItem("user_email");
-
   if (user_email !== null) {
     try {
       var rec1 = sessionStorage.getItem("rec1");
@@ -267,8 +260,6 @@ function rc_app1() {
 }
 
 function rc_app2() {
-  var user_email = sessionStorage.getItem("user_email");
-
   if (user_email !== null) {
     try {
       var rec2 = sessionStorage.getItem("rec2");
@@ -291,8 +282,6 @@ function rc_app2() {
 }
 
 function rc_app3() {
-  var user_email = sessionStorage.getItem("user_email");
-
   if (user_email !== null) {
     try {
       var rec3 = sessionStorage.getItem("rec3");
@@ -315,14 +304,11 @@ function rc_app3() {
 }
 
 function rc_app1_() {
-  var user_email = sessionStorage.getItem("user_email");
-
   if (user_email !== null) {
     try {
       var rec1 = sessionStorage.getItem("rec1");
       location.href = recommendation_list[rec1 - 1][1];
     } catch (error) {
-      console.error(error);
       Swal.fire({
         icon: "error",
         text: "추천된 앱이 없습니다.",
@@ -339,14 +325,11 @@ function rc_app1_() {
 }
 
 function rc_app2_() {
-  var user_email = sessionStorage.getItem("user_email");
-
   if (user_email !== null) {
     try {
       var rec2 = sessionStorage.getItem("rec2");
       location.href = recommendation_list[rec2 - 1][1];
     } catch (error) {
-      console.error(error);
       Swal.fire({
         icon: "error",
         text: "추천된 앱이 없습니다.",
@@ -363,14 +346,11 @@ function rc_app2_() {
 }
 
 function rc_app3_() {
-  var user_email = sessionStorage.getItem("user_email");
-
   if (user_email !== null) {
     try {
       var rec3 = sessionStorage.getItem("rec3");
       location.href = recommendation_list[rec3 - 1][1];
     } catch (error) {
-      console.error(error);
       Swal.fire({
         icon: "error",
         text: "추천된 앱이 없습니다.",
@@ -387,28 +367,48 @@ function rc_app3_() {
 }
 
 function app_click_1() {
-  var user_email = sessionStorage.getItem("user_email");
-
   if (user_email !== null) {
-    var rec1 = sessionStorage.getItem("rec1");
-    Swal.fire({ html: recommendation_list_common[rec1 - 1][1] });
+    try {
+      var rec1 = sessionStorage.getItem("rec1");
+      Swal.fire({
+        html: recommendation_list_common[rec1 - 1][1],
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        text: "추천된 앱이 없습니다.",
+        timer: 1500,
+      });
+    }
   }
 }
 
 function app_click_2() {
-  var user_email = sessionStorage.getItem("user_email");
-
   if (user_email !== null) {
-    var rec2 = sessionStorage.getItem("rec2");
-    Swal.fire({ html: recommendation_list_common[rec2 - 1][1] });
+    try {
+      var rec2 = sessionStorage.getItem("rec2");
+      Swal.fire({ html: recommendation_list_common[rec2 - 1][1] });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        text: "추천된 앱이 없습니다.",
+        timer: 1500,
+      });
+    }
   }
 }
 
 function app_click_3() {
-  var user_email = sessionStorage.getItem("user_email");
-
   if (user_email !== null) {
-    var rec3 = sessionStorage.getItem("rec3");
-    Swal.fire({ html: recommendation_list_common[rec3 - 1][1] });
+    try {
+      var rec3 = sessionStorage.getItem("rec3");
+      Swal.fire({ html: recommendation_list_common[rec3 - 1][1] });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        text: "추천된 앱이 없습니다.",
+        timer: 1500,
+      });
+    }
   }
 }
