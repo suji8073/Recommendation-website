@@ -98,6 +98,22 @@ let axiosConfig = {
 };
 
 window.onload = function start() {
+  if (survey1 == 1) {
+    console.log("1");
+    document.getElementById("icon_1").style.color = "#FBD74A";
+  }
+  if (survey2 == 1) {
+    console.log("2");
+    document.getElementById("icon_2").style.color = "#FBD74A";
+  }
+  if (survey3 == 1) {
+    console.log("3");
+    document.getElementById("icon_3").style.color = "#FBD74A";
+  }
+  if (survey_rec == 1) {
+    console.log("4");
+    document.getElementById("icon_4").style.color = "#FBD74A";
+  }
   if (user_email !== null) {
     document.getElementById("login_y_n_main").innerHTML = user_email;
     document.getElementById("login_y_n_main").style.fontSize = "18px";
@@ -113,23 +129,6 @@ window.onload = function start() {
     if (rec3 != 0) {
       document.getElementById("evaluation_3").innerHTML =
         recommendation_list_common[rec3 - 1][0] + " 평가하기";
-    }
-
-    if (survey1 == 1) {
-      console.log("1");
-      document.getElementById("icon_1").style.color = "#FBD74A";
-    }
-    if (survey2 == 1) {
-      console.log("2");
-      document.getElementById("icon_2").style.color = "#FBD74A";
-    }
-    if (survey3 == 1) {
-      console.log("3");
-      document.getElementById("icon_3").style.color = "#FBD74A";
-    }
-    if (survey_rec == 1) {
-      console.log("4");
-      document.getElementById("icon_4").style.color = "#FBD74A";
     }
   }
 };
