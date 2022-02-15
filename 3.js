@@ -252,6 +252,7 @@ function evaluation_4() {
 
 function change_sur1() {
   survey1 = sessionStorage.setItem("survey1", "1");
+  document.getElementById("icon_1").style.color = "#FBD74A";
   const data = {
     records: [
       {
@@ -281,6 +282,7 @@ function change_sur1() {
 
 function change_sur2() {
   survey2 = sessionStorage.setItem("survey2", "1");
+  document.getElementById("icon_2").style.color = "#FBD74A";
   const data = {
     records: [
       {
@@ -310,6 +312,7 @@ function change_sur2() {
 
 function change_sur3() {
   survey3 = sessionStorage.setItem("survey3", "1");
+  document.getElementById("icon_3").style.color = "#FBD74A";
   const data = {
     records: [
       {
@@ -339,6 +342,7 @@ function change_sur3() {
 
 function change_sur4() {
   survey_rec = sessionStorage.setItem("survey_rec", "1");
+  document.getElementById("icon_4").style.color = "#FBD74A";
   const data = {
     records: [
       {
