@@ -102,12 +102,18 @@ window.onload = function start() {
     document.getElementById("login_y_n_main").innerHTML = user_email;
     document.getElementById("login_y_n_main").style.fontSize = "18px";
     document.getElementById("login_").innerHTML = user_email.split("@")[0];
-    document.getElementById("evaluation_1").innerHTML =
-      recommendation_list_common[rec1 - 1][0] + " 평가하기";
-    document.getElementById("evaluation_2").innerHTML =
-      recommendation_list_common[rec2 - 1][0] + " 평가하기";
-    document.getElementById("evaluation_3").innerHTML =
-      recommendation_list_common[rec3 - 1][0] + " 평가하기";
+    if (rec1 != 0) {
+      document.getElementById("evaluation_1").innerHTML =
+        recommendation_list_common[rec1 - 1][0] + " 평가하기";
+    }
+    if (rec2 != 0) {
+      document.getElementById("evaluation_2").innerHTML =
+        recommendation_list_common[rec2 - 1][0] + " 평가하기";
+    }
+    if (rec3 != 0) {
+      document.getElementById("evaluation_3").innerHTML =
+        recommendation_list_common[rec3 - 1][0] + " 평가하기";
+    }
 
     if (survey1 == 1) {
       console.log("1");
@@ -159,9 +165,17 @@ function login_check() {
 
 function evaluation_1() {
   if (user_email !== null) {
-    change_sur1();
-    window.open("about:blank").location.href =
-      "https://forms.gle/d5zPoB2fxiAf7wnd9";
+    if (rec1 != 0) {
+      change_sur1();
+      window.open("about:blank").location.href =
+        "https://forms.gle/d5zPoB2fxiAf7wnd9";
+    } else {
+      Swal.fire({
+        icon: "error",
+        text: "추천된 앱이 없습니다.",
+        timer: 1500,
+      });
+    }
   } else {
     Swal.fire({
       icon: "error",
@@ -172,9 +186,17 @@ function evaluation_1() {
 }
 function evaluation_2() {
   if (user_email !== null) {
-    change_sur2();
-    window.open("about:blank").location.href =
-      "https://forms.gle/d5zPoB2fxiAf7wnd9";
+    if (rec2 != 0) {
+      change_sur2();
+      window.open("about:blank").location.href =
+        "https://forms.gle/d5zPoB2fxiAf7wnd9";
+    } else {
+      Swal.fire({
+        icon: "error",
+        text: "추천된 앱이 없습니다.",
+        timer: 1500,
+      });
+    }
   } else {
     Swal.fire({
       icon: "error",
@@ -186,9 +208,17 @@ function evaluation_2() {
 
 function evaluation_3() {
   if (user_email !== null) {
-    change_sur3();
-    window.open("about:blank").location.href =
-      "https://forms.gle/d5zPoB2fxiAf7wnd9";
+    if (rec3 != 0) {
+      change_sur3();
+      window.open("about:blank").location.href =
+        "https://forms.gle/d5zPoB2fxiAf7wnd9";
+    } else {
+      Swal.fire({
+        icon: "error",
+        text: "추천된 앱이 없습니다.",
+        timer: 1500,
+      });
+    }
   } else {
     Swal.fire({
       icon: "error",

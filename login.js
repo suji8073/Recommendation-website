@@ -55,16 +55,53 @@ function login_check() {
             sessionStorage.setItem("user_id", data.records[i].id);
             sessionStorage.setItem("user_email", data.records[i].fields.email);
             sessionStorage.setItem("user_pw", data.records[i].fields.password);
-            sessionStorage.setItem("rec1", data.records[i].fields.rec1);
-            sessionStorage.setItem("rec2", data.records[i].fields.rec2);
-            sessionStorage.setItem("rec3", data.records[i].fields.rec3);
-            sessionStorage.setItem("type", data.records[i].fields.type);
-            sessionStorage.setItem("survey1", data.records[i].fields.survey1);
-            sessionStorage.setItem("survey2", data.records[i].fields.survey2);
-            sessionStorage.setItem("survey3", data.records[i].fields.survey3);
+            sessionStorage.setItem(
+              "rec1",
+              data.records[i].fields.rec1 === undefined
+                ? 0
+                : data.records[i].fields.rec1
+            );
+            sessionStorage.setItem(
+              "rec2",
+              data.records[i].fields.rec2 === undefined
+                ? 0
+                : data.records[i].fields.rec2
+            );
+            sessionStorage.setItem(
+              "rec3",
+              data.records[i].fields.rec3 === undefined
+                ? 0
+                : data.records[i].fields.rec3
+            );
+            sessionStorage.setItem(
+              "type",
+              data.records[i].fields.type === undefined
+                ? 0
+                : data.records[i].fields.type
+            );
+            sessionStorage.setItem(
+              "survey1",
+              data.records[i].fields.survey1 === undefined
+                ? 0
+                : data.records[i].fields.survey1
+            );
+            sessionStorage.setItem(
+              "survey2",
+              data.records[i].fields.survey2 === undefined
+                ? 0
+                : data.records[i].fields.survey2
+            );
+            sessionStorage.setItem(
+              "survey3",
+              data.records[i].fields.survey3 === undefined
+                ? 0
+                : data.records[i].fields.survey3
+            );
             sessionStorage.setItem(
               "survey_rec",
-              data.records[i].fields.survey_rec
+              data.records[i].fields.survey_rec === undefined
+                ? 0
+                : data.records[i].fields.survey_rec
             );
 
             Swal.fire({
