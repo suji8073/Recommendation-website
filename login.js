@@ -8,6 +8,8 @@ function login_check() {
   const input_ID = document.getElementById("ID").value;
   const input_PW = document.getElementById("PW").value;
 
+  var check = 1;
+
   if (input_ID == "") {
     Swal.fire({
       icon: "error",
@@ -49,6 +51,7 @@ function login_check() {
           ) {
             //로그인 성공
             console.log("로그인 성공");
+            check = 0;
             sessionStorage.setItem("user_email", data.records[i].fields.email);
             sessionStorage.setItem("user_pw", data.records[i].fields.password);
             sessionStorage.setItem("rec1", data.records[i].fields.rec1);
@@ -76,15 +79,16 @@ function login_check() {
             }).then(function () {
               location.href = "./index.html";
             });
-          } else {
-            //로그인 실패
-            console.log("로그인 실패");
-            Swal.fire({
-              icon: "error",
-              text: "로그인 실패. 다시 입력해주세요.",
-              timer: 1500,
-            });
           }
+        }
+        if (check === 1) {
+          //로그인 실패
+          console.log("로그인 실패");
+          Swal.fire({
+            icon: "error",
+            text: "로그인 실패. 다시 입력해주세요.",
+            timer: 1500,
+          });
         }
       })
       .catch((error) => {
