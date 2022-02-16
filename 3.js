@@ -81,7 +81,6 @@ var type_list = [
 
 var user_id = sessionStorage.getItem("user_id");
 var user_email = sessionStorage.getItem("user_email");
-var user_pw = sessionStorage.getItem("user_pw");
 
 var rec1 = sessionStorage.getItem("rec1");
 var rec2 = sessionStorage.getItem("rec2");
@@ -98,20 +97,63 @@ let axiosConfig = {
 };
 
 window.onload = function start() {
+  fetch("https://api.airtable.com/v0/appyJbFaZcmTQCGLQ/Table%201/" + user_id, {
+    headers: {
+      Authorization: "Bearer keyTvIqUQEHqc8ufv",
+    },
+  })
+    .then((response) => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error("Unable ");
+      }
+    })
+    .then((data) => {
+      sessionStorage.setItem(
+        "rec1",
+        data.fields.rec1 === undefined ? 0 : data.fields.rec1
+      );
+      sessionStorage.setItem(
+        "rec2",
+        data.fields.rec2 === undefined ? 0 : data.fields.rec2
+      );
+      sessionStorage.setItem(
+        "rec3",
+        data.fields.rec3 === undefined ? 0 : data.fields.rec3
+      );
+      sessionStorage.setItem(
+        "type",
+        data.fields.type === undefined ? 0 : data.fields.type
+      );
+      sessionStorage.setItem(
+        "survey1",
+        data.fields.survey1 === undefined ? 0 : data.fields.survey1
+      );
+      sessionStorage.setItem(
+        "survey2",
+        data.fields.survey2 === undefined ? 0 : data.fields.survey2
+      );
+      sessionStorage.setItem(
+        "survey3",
+        data.fields.survey3 === undefined ? 0 : data.fields.survey3
+      );
+      sessionStorage.setItem(
+        "survey_rec",
+        data.fields.survey_rec === undefined ? 0 : data.fields.survey_rec
+      );
+    });
+
   if (survey1 == 1) {
-    console.log("1");
     document.getElementById("icon_1").style.color = "#FBD74A";
   }
   if (survey2 == 1) {
-    console.log("2");
     document.getElementById("icon_2").style.color = "#FBD74A";
   }
   if (survey3 == 1) {
-    console.log("3");
     document.getElementById("icon_3").style.color = "#FBD74A";
   }
   if (survey_rec == 1) {
-    console.log("4");
     document.getElementById("icon_4").style.color = "#FBD74A";
   }
   if (user_email !== null) {
@@ -258,7 +300,6 @@ function change_sur1() {
         id: user_id,
         fields: {
           email: user_email,
-          password: user_pw,
           survey1: "1",
         },
       },
@@ -281,7 +322,6 @@ function change_sur2() {
         id: user_id,
         fields: {
           email: user_email,
-          password: user_pw,
           survey2: "1",
         },
       },
@@ -304,7 +344,6 @@ function change_sur3() {
         id: user_id,
         fields: {
           email: user_email,
-          password: user_pw,
           survey3: "1",
         },
       },
@@ -327,7 +366,6 @@ function change_sur4() {
         id: user_id,
         fields: {
           email: user_email,
-          password: user_pw,
           survey_rec: "1",
         },
       },

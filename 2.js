@@ -157,54 +157,91 @@ var recommendation_list_common = [
   ],
 ];
 var user_email = sessionStorage.getItem("user_email");
+var user_id = sessionStorage.getItem("user_id");
 var rec1 = sessionStorage.getItem("rec1");
 var rec2 = sessionStorage.getItem("rec2");
 var rec3 = sessionStorage.getItem("rec3");
 
 window.onload = function start() {
+  fetch("https://api.airtable.com/v0/appyJbFaZcmTQCGLQ/Table%201/" + user_id, {
+    headers: {
+      Authorization: "Bearer keyTvIqUQEHqc8ufv",
+    },
+  })
+    .then((response) => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error("Unable ");
+      }
+    })
+    .then((data) => {
+      sessionStorage.setItem(
+        "rec1",
+        data.fields.rec1 === undefined ? 0 : data.fields.rec1
+      );
+      sessionStorage.setItem(
+        "rec2",
+        data.fields.rec2 === undefined ? 0 : data.fields.rec2
+      );
+      sessionStorage.setItem(
+        "rec3",
+        data.fields.rec3 === undefined ? 0 : data.fields.rec3
+      );
+      sessionStorage.setItem(
+        "type",
+        data.fields.type === undefined ? 0 : data.fields.type
+      );
+    });
+
   if (user_email !== null) {
     document.getElementById("login_y_n_main").innerHTML = user_email;
     document.getElementById("login_y_n_main").style.fontSize = "18px";
     document.getElementById("login_").innerHTML = user_email.split("@")[0];
 
-    document.getElementById("app_1").innerHTML =
-      recommendation_list_common[rec1 - 1][0] + "<br/>" + "사용 예시";
-    document.getElementById("app_2").innerHTML =
-      recommendation_list_common[rec2 - 1][0] + "<br/>" + "사용 예시";
-    document.getElementById("app_3").innerHTML =
-      recommendation_list_common[rec3 - 1][0] + "<br/>" + "사용 예시";
+    if (rec1 != 0) {
+      document.getElementById("app_1").innerHTML =
+        recommendation_list_common[rec1 - 1][0] + "<br/>" + "사용 예시";
+      document.getElementById("app_1_1").innerHTML =
+        "추천된 앱" +
+        "<br/>" +
+        recommendation_list_common[rec1 - 1][0] +
+        " ios 버전";
+      document.getElementById("app_1_2").innerHTML =
+        "추천된 앱" +
+        "<br/>" +
+        recommendation_list_common[rec1 - 1][0] +
+        " android 버전";
+    }
 
-    document.getElementById("app_1_1").innerHTML =
-      "추천된 앱" +
-      "<br/>" +
-      recommendation_list_common[rec1 - 1][0] +
-      " ios 버전";
-    document.getElementById("app_2_1").innerHTML =
-      "추천된 앱" +
-      "<br/>" +
-      recommendation_list_common[rec2 - 1][0] +
-      " ios 버전";
-    document.getElementById("app_3_1").innerHTML =
-      "추천된 앱" +
-      "<br/>" +
-      recommendation_list_common[rec3 - 1][0] +
-      " ios 버전";
-
-    document.getElementById("app_1_2").innerHTML =
-      "추천된 앱" +
-      "<br/>" +
-      recommendation_list_common[rec1 - 1][0] +
-      " android 버전";
-    document.getElementById("app_2_2").innerHTML =
-      "추천된 앱" +
-      "<br/>" +
-      recommendation_list_common[rec2 - 1][0] +
-      " android 버전";
-    document.getElementById("app_3_2").innerHTML =
-      "추천된 앱" +
-      "<br/>" +
-      recommendation_list_common[rec3 - 1][0] +
-      " android 버전";
+    if (rec2 != 0) {
+      document.getElementById("app_2").innerHTML =
+        recommendation_list_common[rec2 - 1][0] + "<br/>" + "사용 예시";
+      document.getElementById("app_2_1").innerHTML =
+        "추천된 앱" +
+        "<br/>" +
+        recommendation_list_common[rec2 - 1][0] +
+        " ios 버전";
+      document.getElementById("app_2_2").innerHTML =
+        "추천된 앱" +
+        "<br/>" +
+        recommendation_list_common[rec2 - 1][0] +
+        " android 버전";
+    }
+    if (rec3 != 0) {
+      document.getElementById("app_3").innerHTML =
+        recommendation_list_common[rec3 - 1][0] + "<br/>" + "사용 예시";
+      document.getElementById("app_3_1").innerHTML =
+        "추천된 앱" +
+        "<br/>" +
+        recommendation_list_common[rec3 - 1][0] +
+        " ios 버전";
+      document.getElementById("app_3_2").innerHTML =
+        "추천된 앱" +
+        "<br/>" +
+        recommendation_list_common[rec3 - 1][0] +
+        " android 버전";
+    }
   }
 };
 

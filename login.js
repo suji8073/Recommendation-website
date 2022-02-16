@@ -25,14 +25,11 @@ function login_check() {
     });
     document.getElementById("PW").focus();
   } else {
-    fetch(
-      "https://api.airtable.com/v0/appyJbFaZcmTQCGLQ/Table%201?maxRecords=100&view=Grid%20view",
-      {
-        headers: {
-          Authorization: "Bearer keyTvIqUQEHqc8ufv",
-        },
-      }
-    )
+    fetch("https://api.airtable.com/v0/appyJbFaZcmTQCGLQ/Table%201", {
+      headers: {
+        Authorization: "Bearer keyTvIqUQEHqc8ufv",
+      },
+    })
       .then((response) => {
         if (response.status === 200) {
           return response.json();
@@ -41,19 +38,17 @@ function login_check() {
         }
       })
       .then((data) => {
-        //{password: 'test1234', rec2: '5', rec1: '3', email: 'test22@kw.ac.kr'}
         var i;
+        var shaPw = CryptoJS.SHA256(input_PW).toString();
         for (i = 0; i < data.records.length; i++) {
           if (
             data.records[i].fields.email === input_ID &&
-            data.records[i].fields.password === input_PW
+            data.records[i].fields.password === shaPw
           ) {
             //로그인 성공
-            console.log("로그인 성공");
             check = 0;
             sessionStorage.setItem("user_id", data.records[i].id);
             sessionStorage.setItem("user_email", data.records[i].fields.email);
-            sessionStorage.setItem("user_pw", data.records[i].fields.password);
             sessionStorage.setItem(
               "rec1",
               data.records[i].fields.rec1 === undefined
@@ -114,7 +109,6 @@ function login_check() {
         }
         if (check === 1) {
           //로그인 실패
-          console.log("로그인 실패");
           Swal.fire({
             icon: "error",
             text: "로그인 실패. 다시 입력해주세요.",

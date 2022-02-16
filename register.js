@@ -27,36 +27,16 @@ function register() {
         });
       } else {
         //회원가입!
-
+        var shaPw = CryptoJS.SHA256(password).toString();
         const data = {
           records: [
             {
               fields: {
                 email: email,
-                password: password,
+                password: shaPw,
                 rec1: null,
                 rec2: null,
                 rec3: null,
-              },
-            },
-          ],
-        };
-
-        const data1 = {
-          records: [
-            {
-              id: "recNe4RsgOw5HNHDs",
-              fields: {
-                email: email,
-                password: password,
-                type: null,
-                rec1: null,
-                rec2: null,
-                rec3: null,
-                survey1: 0,
-                survey2: 0,
-                survey3: 0,
-                survey_rec: 0,
               },
             },
           ],
@@ -71,12 +51,6 @@ function register() {
           method: "POST",
           body: JSON.stringify(data),
           headers: axiosConfig,
-        });
-
-        fetch("https://api.airtable.com/v0/appyJbFaZcmTQCGLQ/Table%201", {
-          body: JSON.stringify(data1),
-          headers: axiosConfig,
-          method: "PATCH",
         });
 
         Swal.fire({
