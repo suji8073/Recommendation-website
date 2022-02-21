@@ -61,20 +61,12 @@ var recommendation_list = [
     "https://play.google.com/store/apps/details?id=com.atistudios.mondly.languages&hl=ko&gl=US",
   ],
   [
-    "",
+    "https://apps.apple.com/kr/app/ai-tutor/id1492243690",
     "https://play.google.com/store/apps/details?id=lg.cns.aitutor.carrot&hl=ko&gl=US",
   ],
   [
     "https://apps.apple.com/kr/app/%EB%89%B4%EB%A1%9C%EC%A0%9C%ED%83%80%EC%8A%A4%ED%86%A4/id435588892",
     "https://play.google.com/store/apps/details?id=air.com.rosettastone.mobile.CoursePlayer&hl=ko&gl=US",
-  ],
-  [
-    "https://apps.apple.com/jp/app/andy-english-bot-%E8%8B%B1%E8%AA%9E%E3%83%81%E3%83%A3%E3%83%83%E3%83%88/id1078490509",
-    "https://play.google.com/store/apps/details?id=com.pyankoff.andy&hl=en_US&gl=US",
-  ],
-  [
-    "https://apps.apple.com/us/app/ef-hello-english-learning-app/id1324622665",
-    "https://play.google.com/store/apps/details?id=com.ef.efhello&hl=en&gl=US",
   ],
   [
     "https://apps.apple.com/us/app/busuu-language-learning/id379968583",
