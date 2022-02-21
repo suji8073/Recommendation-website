@@ -58,7 +58,7 @@ function register() {
           icon: "success",
           timer: 1500,
         }).then(function () {
-          //location.href = "./login.html";
+          location.href = "./login.html";
         });
       }
     }
