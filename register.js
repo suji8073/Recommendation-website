@@ -1,4 +1,5 @@
 function register() {
+  const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const password1 = document.getElementById("password1").value;
@@ -33,6 +34,7 @@ function register() {
             {
               fields: {
                 email: email,
+                name: name,
                 password: shaPw,
                 rec1: null,
                 rec2: null,
