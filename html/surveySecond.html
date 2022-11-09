@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>어학 애플리케이션 추천시스템 | 추천된 앱 확인</title>
+    <title>어학 애플리케이션 추천시스템 | 사후 설문조사</title>
 
     <style>
         @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
@@ -25,18 +25,14 @@
         line-height:1.5;
         font-weight: 600;
       }
-      body {
-        font-family: 'NanumSquare', sans-serif;
-      }
     </style>
 
     <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="../img/core-img/favicon.ico">
 
     <!-- Core Style CSS -->
-    <link rel="stylesheet" href="css/core-style.css">
-    <link rel="stylesheet" href="style.css">
-    <!--<link href="css/argon-dashboard.css?v=1.1.2" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="../css/core-style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 
 </head>
@@ -76,7 +72,7 @@
           </div>
           <!-- Logo -->
           <div class="logo">
-            <a href="index.html"><img src="image/icon2.png" width="200px"
+            <a href="../index.html"><img src="../image/icon2.png" width="200px"
               height="200px"  alt="" /></a>
           </div>
   
@@ -93,25 +89,25 @@
           <span id = "login_" style=" color: #5e5e5e">Log In</span></a
         >
       </div>
-          <!-- menu -->
-          <nav class="amado-nav">
-            <ul class = "nunum">
-              <li ><a href="index.html">홈</a></li>
-              <li ><a href="1.html">나의 성향은?</a></li>
-              <li class="active"><a href="2.html">추천된 앱 확인</a></li>
-              <li><a href="3.html">나의 만족도는?</a></li>
-              <li ><a href="4.html">문의</a></li>
-            </ul>
-          </nav>
-        </header>
+      <!-- menu -->
+      <nav class="amado-nav">
+        <ul class = "nunum">
+          <li ><a href="../index.html">홈</a></li>
+          <li ><a href="surveyFirst.html">나의 성향은?</a></li>
+          <li><a href="recommend.html">추천된 앱 확인</a></li>
+          <li class="active"><a href="surveySecond.html">나의 만족도는?</a></li>
+          <li ><a href="inquiry.html">문의</a></li>
+        </ul>
+      </nav>
+    </header>
         <!-- Header Area End -->
 
     <!-- Product Catagories Area Start -->
-    <div onclick="location.href='index.html'" class="single-products-catagory btn-primary" style=" background-color: whitesmoke; padding-left: 20px; padding-right: 20px; padding-bottom: 20px;">
+    <div onclick="location.href='../index.html'" class="single-products-catagory btn-primary" style=" background-color: whitesmoke; padding-left: 20px; padding-right: 20px; padding-bottom: 20px;">
       <div class="nunum_bold" style="margin-top: 20px; margin-bottom: 40px;">
         <div class="line"></div>
         <img style="float: left"
-              src="image/icon1.png"
+              src="../image/icon1.png"
               width="70px"
               height="70px"
               alt=""
@@ -121,56 +117,67 @@
     </div>
 
     <div class="cart-table-area section-padding-100">
-      <div class="container-fluid" >
+      <div class="container-fluid">
         <div class="checkout_details_area mt-40 clearfix">
             <div class="cart-title nunum">
-              <h3>추천된 앱 확인</h3>
-              </br>
-
-              <div class="row" style="margin-bottom: 0px;">
-                <div class="margin1"></div>
-                <div class="common" style="float: left;">
-                  <a onclick="app_click_1()" id = "app_1" class="common_app" style="text-align: center; color : white">앱1</br>사용예시</a>
+                <h3>나의 만족도는?</h3>
+                <h6>여러분들이 사용하셨던 앱과 추천에 대한 만족도를 조사하기 위한 것입니다.   
+                </br>추천시스템이 더욱 발전될 수 있도록 성실히 답변하여 주시길 바랍니다. </h6>
+              </br></br>
+                <div class = "content_app">
+                  <div class="row" style="margin-bottom: 0px;">
+                    <div class="margin_content"></div>
+                    <div class="content_1" style="float: left;">
+                      <a id ="evaluation_1" onclick="evaluation_1()" class="evaluation" style="text-align: center; color : rgb(0, 0, 0)">앱1 평가하기</a>
+                    </div>
+    
+                    <div class="margin_content1"></div>
+                    <div  class="content_2" style="float: left;">
+                      <i id = "icon_1" class="fas fa-solid fa-check" style="font-size: 30px; color: #BBBBBB"></i>
+                    </div>
+                    <div class="margin_content"></div>
+                  </div>
+    
+                  <div class="row" style="margin-top: 30px;">
+                    <div class="margin_content"></div>
+                    <div class="content_1" style="float: left;">
+                      <a id ="evaluation_2" onclick="evaluation_2()" class="evaluation" style="text-align: center; color : rgb(0, 0, 0)">앱2 평가하기</a>
+                    </div>
+    
+                    <div class="margin_content1"></div>
+                    <div  class="content_2" style="float: left;">
+                      <i id = "icon_2" class="fas fa-solid fa-check" style="font-size: 30px; color: #BBBBBB"></i>
+                    </div>
+                    <div class="margin_content"></div>
+                  </div>
+    
+                  <div class="row" style="margin-top: 30px;">
+                    <div class="margin_content"></div>
+                    <div class="content_1" style="float: left;">
+                      <a id ="evaluation_3" onclick="evaluation_3()" class="evaluation" style="text-align: center; color : rgb(0, 0, 0)">앱3 평가하기</a>
+                    </div>
+    
+                    <div class="margin_content1"></div>
+                    <div  class="content_2" style="float: left;">
+                      <i id = "icon_3" class="fas fa-solid fa-check" style="font-size: 30px; color: #BBBBBB"></i>
+                    </div>
+                    <div class="margin_content"></div>
+                  </div>
+    
+                  <div class="row" style="margin-top: 40px;">
+                    <div class="margin_content"></div>
+                    <div class="content_1" style="float: left;">
+                      <a onclick="evaluation_4()" class="evaluation" style="text-align: center;">추천시스템 평가하기</a>
+                    </div>
+    
+                    <div class="margin_content1"></div>
+                    <div  class="content_2" style="float: left;">
+                      <i id = "icon_4" class="fas fa-solid fa-check" style="font-size: 30px; color: #BBBBBB"></i>
+                    </div>
+                    <div class="margin_content"></div>
+                  </div>
                 </div>
-                <div class="margin1"></div>
-                <div  class="common1" style="float: left;">
-                  <a onclick="rc_app1()" id = "app_1_1" class="app" style="text-align: center; color : white; margin-bottom: 10px;">추천된 앱 1<br/>ios 버전</a>
-                  <a onclick="rc_app1_()" id = "app_1_2" class="app" style="text-align: center; color : white">추천된 앱 1<br/>android 버전</a>
-                </div>
-                <div class="margin1"></div>
-              </div>
-
-
-              <div class="row" style="margin-top: 30px;">
-                <div class="margin1"></div>
-                <div class="common" style="float: left;">
-                  <a onclick="app_click_2()" id = "app_2" class="common_app" style="text-align: center; color : white">앱2</br>사용예시</a>
-                </div>
-                <div class="margin1"></div>
-                <div  class="common1" style="float: left;">
-                  <a onclick="rc_app2()" id = "app_2_1" class="app" style="text-align: center; color : white; margin-bottom: 10px;">추천된 앱 2<br/>ios 버전</a>
-                  <a onclick="rc_app2_()" id = "app_2_2" class="app" style="text-align: center; color : white">추천된 앱 2<br/>android 버전</a>
-                </div>
-                <div class="margin1"></div>
-              </div>
-
-              <div class="row" style="margin-top: 30px;">
-                <div class="margin1"></div>
-                <div class="common" style="float: left;">
-                  <a onclick="app_click_3()" id = "app_3" class="common_app" style="text-align: center; color : white">앱3</br>사용예시</a>
-                </div>
-                <div class="margin1"></div>
-                <div  class="common1" style="float: left;">
-                  <a onclick="rc_app3()" id = "app_3_1" class="app" style="text-align: center; color : white; margin-bottom: 10px;">추천된 앱 3<br/>ios 버전</a>
-                  <a onclick="rc_app3_()" id = "app_3_2" class="app" style="text-align: center; color : white">추천된 앱 3<br/>android 버전</a>
-                </div>
-                <div class="margin1"></div>
-              </div>
-
-              <div class="text-center" style="margin-top: 40px;">
-                <button type="button" onclick="location.href='3.html'" class="btn btn-primary mt-3 px-5" style="height: 50px;">사후 설문조사 바로가기</button>
-              </div>
-          </div>  
+            </div>
         </div>
       </div>
     </div>
@@ -186,12 +193,11 @@
           <div class="single_widget_area nunum">
             <!-- Logo -->
             <div class="row footer-logo mr-10" style="margin-top : 10px; margin-bottom: 20px; margin-left: auto;">
-              <img src="image/mail.png" style="width:34px; height:30px; float: left; margin-right: 10px;" alt=""/>
+              <img src="../image/mail.png" style="width:34px; height:30px; float: left; margin-right: 10px;" alt=""/>
               <div style="float: left; color: white;">
                 <span style="font-size: 15px;">이메일</br>hyejijang@ewhain.net</span>
               </div>
             </div>
-
           </div>  
         </div>
       </div>
@@ -211,7 +217,7 @@
     <script src="js/active.js"></script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type= "text/javascript" src="2.js"></script>
+    <script type= "text/javascript" src="js/surveySecond.js"></script>
 
 </body>
 
